@@ -1,0 +1,42 @@
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(135deg, #000000, #000000); /* Градиентный фон */
+    overflow: hidden; /* Убираем прокрутку */
+}
+
+.container {
+    text-align: center;
+}
+
+/* Стили для фото-кнопки */
+.button-image {
+    width: 360px; /* Ширина фото */
+    height: 225px; /* Высота фото */
+    border-radius: 0%; /* Делаем фото круглым */
+    cursor: pointer; /* Курсор как у кнопки */
+    border: 5px solid #00b7ff; /* Толстая голубая обводка */
+    padding: 0px; /* Минимальный внутренний отступ */
+    box-sizing: border-box; /* Обводка внутри фото */
+    transition: transform 0.2s ease, border-color 0.3s ease;
+}
+
+.button-image:hover {
+    border-color: #1983a7; /* Цвет рамки при наведении */
+}
+
+.button-image:active {
+    transform: scale(0.95); /* Анимация при нажатии */
+}
+
+/* Стили для текста под кнопкой */
+.text-below {
+    font-size: 25px;
+    color: #ffffff;
+    margin-top: 25px; /* Отступ сверху */
+    font-weight: bold; /* Жирный текст */
+}
