@@ -17,9 +17,9 @@ body {
 
 /* Обёртка для фото с обводкой */
 .image-wrapper {
-    width: 400px; /* Задай нужную ширину рамки */
-    height: 230px; /* Задай нужную высоту рамки */
-    border: var(--border-size, 5px) solid var(--border-color, #00e1ff); /* Обводка */
+    width: 350px; /* Задай нужную ширину рамки */
+    height: 200px; /* Задай нужную высоту рамки */
+    border: var(--border-size, 100px) solid var(--border-color, #00e1ff); /* Обводка */
     border-radius: 0%; /* Делаем обводку круглой */
     overflow: hidden; /* Чтобы изображение не выходило за рамку */
     display: flex;
