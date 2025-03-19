@@ -1,3 +1,4 @@
+/* Основные стили для body */
 body {
     margin: 0;
     padding: 0;
@@ -5,38 +6,80 @@ body {
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background: linear-gradient(135deg, #000000, #000000); /* Градиентный фон */
+    background-color: #000000; /* Цвет фона */
     overflow: hidden; /* Убираем прокрутку */
 }
 
+/* Контейнер для кнопки и текста */
 .container {
     text-align: center;
 }
 
-/* Стили для фото-кнопки */
-.button-image {
-    width: 360px; /* Ширина фото */
-    height: 225px; /* Высота фото */
-    border-radius: 0%; /* Делаем фото круглым */
+/* Обёртка для фото с обводкой */
+.image-wrapper {
+    width: 400px; /* Задай нужную ширину рамки */
+    height: 230px; /* Задай нужную высоту рамки */
+    border: var(--border-size, 5px) solid var(--border-color, #00e1ff); /* Обводка */
+    border-radius: 0%; /* Делаем обводку круглой */
+    overflow: hidden; /* Чтобы изображение не выходило за рамку */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #ffffff; /* Фон внутри рамки */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Тень для обводки */
+    transition: border-color 0.3s ease, border-width 0.3s ease; /* Анимация для обводки */
     cursor: pointer; /* Курсор как у кнопки */
-    border: 5px solid #00b7ff; /* Толстая голубая обводка */
-    padding: 0px; /* Минимальный внутренний отступ */
-    box-sizing: border-box; /* Обводка внутри фото */
-    transition: transform 0.2s ease, border-color 0.3s ease;
 }
 
-.button-image:hover {
-    border-color: #1983a7; /* Цвет рамки при наведении */
+/* Фото */
+.button-image {
+    max-width: 250%; /* Ограничение по ширине */
+    max-height: 130%; /* Ограничение по высоте */
+    object-fit: cover; /* Масштабирование изображения */
+    cursor: pointer; /* Курсор как у кнопки */
+    transition: transform 0.2s ease;
 }
 
-.button-image:active {
-    transform: scale(0.95); /* Анимация при нажатии */
+/* Анимация при нажатии на фото */
+.button-image.clicked {
+    animation: clickAnimation 0.3s ease;
+}
+
+/* Анимация для рамки при нажатии */
+.image-wrapper.clicked {
+    animation: borderAnimation 0.3s ease;
+}
+
+/* Кейфреймы для анимации фото */
+@keyframes clickAnimation {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(0.9);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+/* Кейфреймы для анимации рамки */
+@keyframes borderAnimation {
+    0% {
+        border-color: var(--border-color);
+    }
+    50% {
+        border-color: #1f939d; /* Красный цвет при нажатии */
+    }
+    100% {
+        border-color: var(--border-color);
+    }
 }
 
 /* Стили для текста под кнопкой */
 .text-below {
-    font-size: 25px;
+    font-size: 30px;
     color: #ffffff;
-    margin-top: 25px; /* Отступ сверху */
+    margin-top: 20px; /* Отступ сверху */
     font-weight: bold; /* Жирный текст */
 }
